@@ -38,7 +38,12 @@ describe EventsController do
     let(:eventbrites) { [eventbrite1, eventbrite2] }
 
     it 'returns an array of events from different sources' do
-      expect(assigns(:events)).to eq [meetup1, meetup2, eventbrite1, eventbrite2]
+      allow(controller).to receive(:events).and_return(meetups + eventbrites)
+      get :index
+      expect(assigns(:events)).to include meetup1
+      expect(assigns(:events)).to include meetup2
+      expect(assigns(:events)).to include eventbrite1
+      expect(assigns(:events)).to include eventbrite2
     end
   end
 end
