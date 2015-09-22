@@ -26,9 +26,8 @@ class EventbriteAggregator
 =end
 	def fetch
 		params = {
-	    	:"location.latitude"		=> 53.2167, 
-	    	:"location.longitude"		=> 6.5667, 
-	    	:"start_date.range_start"	=> DateTime.now.to_s
+	    	"location.latitude"		=> 53.2167, 
+	    	"location.longitude"		=> 6.5667, 
 	    }
 
 		RestClient.get "https://www.eventbriteapi.com/v3/events/search/", {params: params, accept: :json,  authorization: "Bearer #{Rails.application.secrets.eventbrite_token}"}
