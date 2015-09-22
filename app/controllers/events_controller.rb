@@ -4,6 +4,9 @@ class EventsController < ApplicationController
       aggregator.new.future.fetch
     end
 
-    @events = futures.map(&:value).flatten
+    @events = futures.map(&:value).flatten.map do |event|
+      Event.find_or_create_by original_provider: event.original_provider,
+                              original_id: event.original_id
+    end.compact
   end
 end

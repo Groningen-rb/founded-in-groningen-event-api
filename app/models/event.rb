@@ -5,10 +5,7 @@ class Event < ActiveRecord::Base
   PROVIDERS = [MEETUP, EVENTBRITE]
 
   validates :name, presence: true
-  validates :original_provider, inclusion: { in: PROVIDERS }
+  validates :original_provider, inclusion: { in: PROVIDERS }, uniqueness: {scope: :original_id}
   validates :original_id, presence: true
-  validates :description, presence: true
   validates :start_datetime, presence: true
-  validates :end_datetime, presence: true
-  validates :location, presence: true
 end
