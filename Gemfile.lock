@@ -117,6 +117,8 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    haml (4.0.7)
+      tilt
     hitimes (1.2.3)
     httparty (0.13.0)
       json (~> 1.8)
@@ -256,6 +258,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   guard-bundler
   guard-rspec
+  haml
   httparty
   jbuilder (~> 2.0)
   jquery-rails
@@ -271,4 +274,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.2
+   1.10.6
