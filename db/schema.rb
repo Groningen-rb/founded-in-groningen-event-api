@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922194637) do
+ActiveRecord::Schema.define(version: 20150922203156) do
 
   create_table "events", force: :cascade do |t|
     t.string   "original_provider"
@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 20150922194637) do
     t.datetime "end_datetime"
     t.string   "location"
     t.string   "rsvp_link"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "hidden",            default: false
   end
+
 end
