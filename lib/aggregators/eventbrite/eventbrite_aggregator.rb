@@ -2,7 +2,7 @@ class EventbriteAggregator
 	include HTTParty
 	base_uri "https://www.eventbriteapi.com/v3/"
 
-  def initialize(service, page)
+  def initialize
     @options = { 
     	:token 						=> Rails.application.secrets.eventbrite_token, 
     	:"location.latitude"		=> 53.2167, 
