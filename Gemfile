@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'meetup_client'
 gem 'httparty'
+# actor pattern
+gem 'celluloid', require: 'celluloid/current'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
