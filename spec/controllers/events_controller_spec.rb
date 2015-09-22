@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe EventsController do
   def meetup
-    {
+    Event.create(
       original_provider: 'meetup',
       original_id: SecureRandom.uuid,
       name: 'Groningen.rb',
@@ -11,11 +11,11 @@ describe EventsController do
       end_datetime: 3.hours.from_now,
       location: 'Launchcafé',
       rsvp_link: 'https://groningen-rb.org/2015'
-    }
+    )
   end
 
   def eventbrite
-    {
+    Event.create(
       original_provider: 'eventbrite',
       original_id: SecureRandom.uuid,
       name: 'PyGrunn',
@@ -24,7 +24,7 @@ describe EventsController do
       end_datetime: Time.zone.now.at_beginning_of_year + 24.hours,
       location: 'Forum Images',
       rsvp_link: 'https://pygrunn.org/2015'
-    }
+    )
   end
 
   describe '#index' do
