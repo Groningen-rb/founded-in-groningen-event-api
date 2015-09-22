@@ -24,7 +24,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rest-client'
+gem 'meetup_client'
+gem 'httparty'
+# actor pattern
+gem 'celluloid', require: 'celluloid/current'
 
+gem 'dotenv-rails'
+gem 'haml'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
